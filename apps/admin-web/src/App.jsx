@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { io } from 'socket.io-client'
 
 const socket = io('http://localhost:4000')
@@ -147,8 +147,9 @@ function App() {
           {renderNav('claims', 'Financial Ledger', '🧾')}
         </div>
         <div className="system-status">
-           <div style={{ color: '#10b981', display: 'flex', alignItems: 'center', gap: '8px' }}>
-             <div className="pulse-dot"></div> Cortex Engine Active
+           <div className="cortex-pulse-container">
+             <div className="pulsar"></div>
+             <div className="pulse-label">Cortex Pulse: Synchronized</div>
            </div>
            <div style={{ marginTop: 20 }}>
                <button className="btn-primary" style={{ width: '100%', marginBottom: 10, fontSize: '0.8rem' }} onClick={handleSeed}>Seed Demo Data</button>

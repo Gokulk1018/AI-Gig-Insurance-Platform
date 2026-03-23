@@ -36,8 +36,21 @@ body { background: #0a0f1e; color: #fff; font-family: 'Inter', system-ui, sans-s
 .btn-danger { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); padding: 8px 16px; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
 .btn-danger:hover { background: #ef4444; color: white; }
 
-.pulse-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981; animation: pulse 2s infinite; }
-@keyframes pulse { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } 100% { opacity: 1; transform: scale(1); } }
+.pulsar {
+  width: 12px; height: 12px; background: #3b82f6; border-radius: 50%;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+  animation: pulsar-ping 1.5s infinite cubic-bezier(0, 0, 0.2, 1);
+}
+@keyframes pulsar-ping {
+  0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+  70% { transform: scale(3); opacity: 0; box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+  100% { transform: scale(1); opacity: 0; }
+}
+.cortex-pulse-container {
+  display: flex; align-items: center; gap: 12px; background: rgba(59, 130, 246, 0.1);
+  padding: 12px 15px; border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2);
+}
+.pulse-label { font-size: 0.75rem; font-weight: 700; color: #3b82f6; text-transform: uppercase; letter-spacing: 1px; }
 
 .search-input { width: 100%; padding: 12px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; font-size: 0.95rem; margin-bottom: 10px; }
 
